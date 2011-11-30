@@ -9,7 +9,7 @@ module Rails
     def initialize_pipeline
       sprockets = Sprockets::Environment.new
       sprockets.cache = ActiveSupport::Cache::FileStore.new(File.join(Rails.root, "tmp", "cache", "assets"))
-      sprockets.append_path(File.join(Rails.root, "public"))
+      sprockets.append_path(File.join(Rails.root, "app/assets"))
 
       sprockets.context_class.instance_eval do
         include ActionView::Helpers
